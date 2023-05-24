@@ -38,7 +38,8 @@
 			<button class="btn btn-outline-primary" type="submit">수정확인</button>
 			<button class="btn btn-outline-warning" type="reset">취소</button>
 		</form>
-	
+			<button class="btn btn-outline-danger"><a href="list.jsp">목록으로</a>
+			</button>
 	</div>
 </body>
 </html>
