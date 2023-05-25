@@ -1,13 +1,12 @@
 package test.guest.dto;
 
-import java.sql.Date;
 
 public class GuestDto {
-	int num;
-	String writer;
-	String content;
-	String pwd;
-	String regdate;
+	private int num;
+	private String writer;
+	private String content;
+	private String pwd;
+	private String regdate;
 	
 	//생성자
 	public GuestDto() {}
@@ -59,11 +58,6 @@ public class GuestDto {
 
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
-	}
-
-	public void setRegdate(Date date) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

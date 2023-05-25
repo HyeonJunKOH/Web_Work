@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
 </head>
 <body>
+	<jsp:include page="/include/navbar.jsp">
+		<jsp:param value="guest" name="current"/>
+	</jsp:include>
 	<div class="container">
 		<h1 style="text-align:center">방명록 작성</h1>
 		<form action="insert.jsp" method="post">
@@ -22,15 +25,10 @@
 			</div>
 			<div>
 				<label for="pwd">비밀번호</label>
-				<input type="text" id="pwd" name="pwd" placeholder="4자리 입력..."/>
-			</div>
-			<div>
-				<label for="regdate">작성일자</label>
-				<input type="text" id="regdate" name="regdate"/>
+				<input type="password" id="pwd" name="pwd" placeholder="4자리 입력..."/>
 			</div>
 			<button type="submit">완료</button>
 		</form>
-			<button><a href="list.jsp">목록으로</a></button>
 	</div>
 </body>
 </html>

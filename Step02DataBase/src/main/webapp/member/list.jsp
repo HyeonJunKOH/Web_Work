@@ -16,10 +16,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>/member/list.jsp</title>
 <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+	<jsp:include page="/include/navbar.jsp">
+	<jsp:param value="member" name="current"/>
+	</jsp:include>
 	<div class="container">
-		<h1>회원 목록 입니다.</h1>
+		<h1 style="text-align:center">회원 목록 입니다.</h1>
 		<div style="text-align:right">
 			<a href="insertform.jsp">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
