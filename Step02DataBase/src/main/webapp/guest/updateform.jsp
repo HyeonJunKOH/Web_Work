@@ -22,24 +22,24 @@
 	<jsp:include page="/include/navbar.jsp">
 		<jsp:param value="guest" name="current"/>
 	</jsp:include>
-	<div class="container mt-5">
+	<div class="container mt-5 row">
 		<h1>방명록 수정 양식</h1>
 		<form action="update.jsp" method="post" class="row g-3">
-			<div class="mb-1">
+			<div class="mb-1 col">
 				<label for="num">번호</label>
-				<input type="text" id="num" name="num" value="<%=dto.getNum()%>" readonly/>
+				<input class="form-control" type="text" id="num" name="num" value="<%=dto.getNum()%>" readonly/>
 			</div>
-			<div class="mb-1">
+			<div class="mb-1 col">
 				<label for="writer">작성자</label>
-				<input type="text" id="writer" name="writer" value="<%=dto.getWriter()%>" />
+				<input class="form-control" type="text" id="writer" name="writer" value="<%=dto.getWriter()%>" />
 			</div>
-			<div class="mb-1">
+			<div class="mb-1 col">
 				<label for="content">내용</label>
 				<textarea name="content" id="content" rows="3"><%=dto.getContent()%></textarea>
 			</div>
-			<div class="mb-1">
+			<div class="mb-1 col">
 				<label for="pwd">비밀번호</label>
-				<input type="password" id="pwd" name="pwd"/>
+				<input class="form-control" type="password" id="pwd" name="pwd"/>
 			</div>
 			<button class="btn btn-outline-primary" type="submit">수정하기</button>
 			<button class="btn btn-outline-warning" type="reset">취소</button>
