@@ -55,7 +55,7 @@
 			<a href="${pageContext.request.contextPath }/file/list.jsp">목록보기</a>
 		</p>
 		<p><%=realPath %></p>
-	<%}else{ %>
+	<%}else{%>
 		<p>
 			업로드 실패!
 			<a href="upload_form.jsp">다시 시도</a>
