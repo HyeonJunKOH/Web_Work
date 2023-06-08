@@ -13,7 +13,7 @@
 		2.DB에서 다운로드 시켜줄 파일의 정보를 읽어온다.
 			어떤 파일명으로 upload 폴더에 저장되어 있는지 => saveFileName
 			업로드 당시 원본 파일명은 무엇인지 => orgFileName
-			파일의 사이는 어떻게 되는지 => fileSize
+			파일의 사이즈는 어떻게 되는지 => fileSize
 		- 다운로드 시켜주기 위해서는 위의 3가지 정보가 필요하다.
 	*/
 	   FileDto dto=FileDao.getInstance().getData(num);

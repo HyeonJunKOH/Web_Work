@@ -112,9 +112,12 @@ public class FileDao {
 	         //DbcpBean 객체를 이용해서 Connection 객체를 얻어온다(Connection Pool 에서 얻어오기)
 	         conn = new DbcpBean().getConn();
 	         //실행할 sql 문 
-	         String sql = "SELECT num, writer, title, orgFileName, saveFileName, fileSize, regdate"
-	               + " FROM board_file"
-	               + " ORDER BY num DESC";
+	         String sql = "select* from(select result1.*,"
+	         			+ " rownum as rnum from("
+	         			+ " select num, writer, title,"
+	         			+ " orgFileName, regdate from"
+	         			+ " board_file order by num desc)"
+	         			+ " result1) where rnum between?and?";
 	         pstmt = conn.prepareStatement(sql);
 	         //sql 문이 미완성이라면 여기서 완성
 
