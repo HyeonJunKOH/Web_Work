@@ -5,7 +5,6 @@
 <%
 	//폼 전송되는 title을 읽어온다.
 	String title=request.getParameter("title");
-	String viewCount=request.getParameter("viewCount");
 	String content=request.getParameter("content");
 	//글의 작성자(업로더)는 Httpsession 객체에서 읽어온다.
 	String writer=(String)session.getAttribute("id");
@@ -14,9 +13,9 @@
 	dto.setWriter(writer);
 	dto.setTitle(title);
 	dto.setContent(content);
-	dto.setViewCount(viewCount);
-	//DB에 저장하고 응답하기
+	//DB에 저장하기
 	boolean isSuccess=CafeDao.getInstance().insert(dto);
+	//응답하기
 %>
 <!DOCTYPE html>
 <html>
@@ -26,10 +25,11 @@
 <title>/cafe/private/insert.jsp</title>
 </head>
 <body>
+	<div class="container">
 	<%if(isSuccess){%>
 		<p>
 			<%=writer%> 님이 업로드한 <%=content%> 게시글을 저장했습니다.
-			<a href="${pageContext.request.contextPath}/cafe/list.jsp">글 목록보기</a>
+			<a href="${pageContext.request.contextPath}/cafe/list.jsp">확인</a>
 		</p>
 	<%}else{%>
 		<p>
@@ -37,5 +37,6 @@
 			<a href="insert_form.jsp">다시 시도</a>
 		</p>
 	<%}%>
+	</div>
 </body>
 </html>

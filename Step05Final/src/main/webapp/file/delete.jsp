@@ -23,7 +23,7 @@
 	//delete 메소드를 호출한다.
 	f.delete();
 	//3. DB에서 해당 파일의 정보를 삭제한다.
-	FileDao.getInstance().delete(dto);
+	FileDao.getInstance().delete(num);
 	//4. 응답한다.
 	//삭제 성공하면 list.jsp로 리다이렉트 이동시키기
 	String cPath=request.getContextPath();
