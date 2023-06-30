@@ -16,11 +16,11 @@
 <body>
     <h1>이벤트 테스트4</h1>
     <div id="app">
-        <div class="box" @click="divClicked">div1</div>
-        <div class="box" @click="divClicked">div2</div>
-        <div class="box" @click="divClicked">div3</div>
-        <div class="box" @click="divClicked">div4</div>
-        <div class="box" @click="divClicked">div5</div>
+        <div class="box" @mouseover="over">div1</div>
+        <div class="box" @mouseover="over">div2</div>
+        <div class="box" @mouseover="over">div3</div>
+        <div class="box" @mouseover="over">div4</div>
+        <div class="box" @mouseover="over">div5</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -30,12 +30,12 @@
               
             },
             methods:{
-                divClicked(e){
+                over(e){
                     //클릭한 바로 그 div 의 innerText 를 "clicked!" 로 바꾸고 싶다면? 
                     console.log(e);
                     // e.target 은 이벤트가 발생한 문서객체의 참조값이다.
                     e.target.innerText="clicked!";
-                    e.target.style.backgroundColor="yellow";
+                    e.target.style.color="red";
                 }
             }
         });

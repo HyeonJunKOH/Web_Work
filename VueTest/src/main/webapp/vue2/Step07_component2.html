@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>component 사용예제</h1>
+	<div id="app">
+		<h2>친구 목록 입니다.</h2>
+		<friends-component v-bind:friends="friends"></friends-component>
+	
+		<h2>동물 친구 목록입니다.</h2>
+		<friends-component v-bind:friends="friends2"></friends-component>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		let app=new Vue({
+			el:"#app",
+			data:{
+				friends:["김구라","해골","원숭이"],
+				friends2:["판다","기린","참새"]
+			},
+			components:{
+				"friends-component":{
+					template:`
+						<ul>
+							<li v-for="item in friends">{{item}}</li>
+						</ul>
+					`,
+					props:["friends"]
+				}
+			}
+		});
+	</script>
+</body>
+</html>
